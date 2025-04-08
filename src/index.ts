@@ -1,11 +1,17 @@
+import pkg from '../package.json';
 import './tasks/compile';
 import './tasks/upload_selectors';
 import './type-extensions.js';
-import { extendConfig } from 'hardhat/config';
+import type { HardhatPlugin } from 'hardhat/types/plugins';
 
-extendConfig((config, userConfig) => {
-  config.fourByteUploader = Object.assign(
-    { runOnCompile: false },
-    userConfig.fourByteUploader,
-  );
-});
+const plugin: HardhatPlugin = {
+  id: pkg.name.split('/').pop()!,
+  npmPackage: pkg.name!,
+  // tasks: [],
+  hookHandlers: {
+    config: import.meta.resolve('./hook_handlers/config.js'),
+    // solidity: import.meta.resolve('./hook_handlers/solidity.js'),
+  },
+};
+
+export default plugin;
