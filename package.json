@@ -18,6 +18,7 @@
   ],
   "repository": "github:solidstate-network/hardhat-4byte-uploader",
   "author": "Nick Barry",
+  "type": "module",
   "main": "dist/src/index.js",
   "types": "dist/src/index.d.ts",
   "scripts": {
