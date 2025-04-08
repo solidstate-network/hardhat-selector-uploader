@@ -1,6 +1,4 @@
 import pkg from '../package.json';
-import './tasks/compile';
-import './tasks/upload_selectors';
 import './type-extensions.js';
 import { globalOption, task } from 'hardhat/config';
 import { ArgumentType } from 'hardhat/types/arguments';
