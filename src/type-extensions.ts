@@ -9,3 +9,9 @@ declare module 'hardhat/types/config' {
     fourByteUploader?: FourByteUploaderUserConfig;
   }
 }
+
+declare module 'hardhat/types/global-options' {
+  interface GlobalOptions {
+    noUploadSelectors: boolean;
+  }
+}
