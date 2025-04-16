@@ -5,7 +5,7 @@ import { ArgumentType } from 'hardhat/types/arguments';
 import type { HardhatPlugin } from 'hardhat/types/plugins';
 
 const plugin: HardhatPlugin = {
-  id: pkg.name.split('/').pop()!,
+  id: pkg.name!,
   npmPackage: pkg.name!,
   tasks: [
     task('upload-selectors')
