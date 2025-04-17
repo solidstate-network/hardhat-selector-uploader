@@ -1,4 +1,4 @@
-import pkg from '../package.json';
+import pkg from '../../package.json';
 import axios from 'axios';
 import { HardhatPluginError } from 'hardhat/plugins';
 import { HookContext } from 'hardhat/types/hooks';
