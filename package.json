@@ -1,6 +1,6 @@
 {
-  "name": "@solidstate/hardhat-4byte-uploader",
-  "version": "1.2.3",
+  "name": "@solidstate/hardhat-selector-uploader",
+  "version": "2.0.0",
   "license": "MIT",
   "description": "Upload local function selectors to the Ethereum Selector Database",
   "keywords": [
@@ -16,7 +16,7 @@
     "blockchain",
     "wow"
   ],
-  "repository": "github:solidstate-network/hardhat-4byte-uploader",
+  "repository": "github:solidstate-network/hardhat-selector-uploader",
   "author": "Nick Barry",
   "type": "module",
   "main": "dist/src/index.js",

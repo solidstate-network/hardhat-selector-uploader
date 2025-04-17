@@ -1,5 +1,5 @@
-export interface FourByteUploaderConfig {
+export interface SelectorUploaderConfig {
   runOnCompile: boolean;
 }
 
-export type FourByteUploaderUserConfig = Partial<FourByteUploaderConfig>;
+export type SelectorUploaderUserConfig = Partial<SelectorUploaderConfig>;
