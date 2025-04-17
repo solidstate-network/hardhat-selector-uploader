@@ -15,7 +15,16 @@ yarn add --dev @solidstate/hardhat-4byte-uploader
 Load plugin in Hardhat config:
 
 ```javascript
-require('@solidstate/hardhat-4byte-uploader');
+import HardhatFourByteUploader from '@solidstate/hardhat-4byte-uploader';
+
+const config: HardhatUserConfig = {
+  plugins: [
+    HardhatFourByteUploader,
+  ],
+  fourByteUploader: {
+    ... // see table for configuration options
+  },
+};
 ```
 
 Add configuration under the `fourByteUploader` key:
