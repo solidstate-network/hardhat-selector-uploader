@@ -1,24 +1,14 @@
 import pkg from '../package.json';
+import taskUploadSelectors from './tasks/upload_selectors.js';
 import './type-extensions.js';
-import { globalOption, task } from 'hardhat/config';
+import { globalOption } from 'hardhat/config';
 import { ArgumentType } from 'hardhat/types/arguments';
 import type { HardhatPlugin } from 'hardhat/types/plugins';
 
 const plugin: HardhatPlugin = {
   id: pkg.name!,
   npmPackage: pkg.name!,
-  tasks: [
-    task('upload-selectors')
-      .setDescription(
-        'Upload local function selectors to the Ethereum Selector Database',
-      )
-      .addFlag({
-        name: 'noCompile',
-        description: "Don't compile before running this task",
-      })
-      .setAction(import.meta.resolve('./actions/upload_selectors.js'))
-      .build(),
-  ],
+  tasks: [taskUploadSelectors],
   hookHandlers: {
     config: import.meta.resolve('./hook_handlers/config.js'),
     solidity: import.meta.resolve('./hook_handlers/solidity.js'),
