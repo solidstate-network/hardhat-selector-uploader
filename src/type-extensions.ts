@@ -1,12 +1,12 @@
-import { FourByteUploaderConfig, FourByteUploaderUserConfig } from './types.js';
+import { SelectorUploaderConfig, SelectorUploaderUserConfig } from './types.js';
 
 declare module 'hardhat/types/config' {
   export interface HardhatConfig {
-    fourByteUploader: FourByteUploaderConfig;
+    selectorUploader: SelectorUploaderConfig;
   }
 
   export interface HardhatUserConfig {
-    fourByteUploader?: FourByteUploaderUserConfig;
+    selectorUploader?: SelectorUploaderUserConfig;
   }
 }
 

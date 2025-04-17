@@ -1,13 +1,13 @@
-# Hardhat 4byte Uploader
+# Hardhat Selector Uploader
 
 Calculate the function selectors found in all local contracts and upload them to the [4byte Directory](https://www.4byte.directory/) Ethereum Signature Database.
 
 ## Installation
 
 ```bash
-npm install --save-dev @solidstate/hardhat-4byte-uploader
+npm install --save-dev @solidstate/hardhat-selector-uploader
 # or
-yarn add --dev @solidstate/hardhat-4byte-uploader
+yarn add --dev @solidstate/hardhat-selector-uploader
 ```
 
 ## Usage
@@ -15,26 +15,26 @@ yarn add --dev @solidstate/hardhat-4byte-uploader
 Load plugin in Hardhat config:
 
 ```javascript
-import HardhatFourByteUploader from '@solidstate/hardhat-4byte-uploader';
+import HardhatSelectorUploader from '@solidstate/hardhat-selector-uploader';
 
 const config: HardhatUserConfig = {
   plugins: [
-    HardhatFourByteUploader,
+    HardhatSelectorUploader,
   ],
-  fourByteUploader: {
+  selectorUploader: {
     ... // see table for configuration options
   },
 };
 ```
 
-Add configuration under the `fourByteUploader` key:
+Add configuration under the `selectorUploader` key:
 
 | option         | description                                                                                                       | default |
 | -------------- | ----------------------------------------------------------------------------------------------------------------- | ------- |
 | `runOnCompile` | whether to automatically upload selectors during compilation (ignored if Hardhat detects a CI server environment) | `false` |
 
 ```javascript
-fourByteUploader: {
+selectorUploader: {
   runOnCompile: true,
 }
 ```
