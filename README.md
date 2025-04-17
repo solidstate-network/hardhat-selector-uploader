@@ -2,6 +2,8 @@
 
 Calculate the function selectors found in all local contracts and upload them to the [4byte Directory](https://www.4byte.directory/) Ethereum Signature Database.
 
+> Versions of this plugin prior to `2.0.0` were released as `@solidstate/hardhat-4byte-uploader`.
+
 ## Installation
 
 ```bash
