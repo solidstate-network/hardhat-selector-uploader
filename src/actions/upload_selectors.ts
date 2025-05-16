@@ -1,4 +1,4 @@
-import { uploadSelectors } from '../logic.js';
+import { uploadSelectors } from '../lib/selector_uploader.js';
 import type { NewTaskActionFunction } from 'hardhat/types/tasks';
 
 interface UploadSelectorsActionArguments {
