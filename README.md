@@ -9,7 +9,7 @@ Calculate the function selectors found in all local contracts and upload them to
 ```bash
 npm install --save-dev @solidstate/hardhat-selector-uploader
 # or
-yarn add --dev @solidstate/hardhat-selector-uploader
+pnpm add -D @solidstate/hardhat-selector-uploader
 ```
 
 ## Usage
@@ -46,19 +46,19 @@ Run the included Hardhat task manually:
 ```bash
 npx hardhat upload-selectors
 # or
-yarn run hardhat upload-selectors
+pnpm hardhat upload-selectors
 ```
 
 ## Development
 
-Install dependencies via Yarn:
+Install dependencies via pnpm:
 
 ```bash
-yarn install
+pnpm install
 ```
 
 Setup Husky to format code on commit:
 
 ```bash
-yarn prepare
+pnpm prepare
 ```
