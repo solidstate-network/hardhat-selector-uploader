@@ -1,4 +1,4 @@
-import pkg from '../package.json';
+import pkg from '../package.json' with { type: 'json' };
 import taskUploadSelectors from './tasks/upload_selectors.js';
 import './type_extensions.js';
 import { globalOption } from 'hardhat/config';
