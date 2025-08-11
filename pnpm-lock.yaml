@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@solidstate/hardhat-solidstate-utils':
-        specifier: 1.0.0-next.3
-        version: 1.0.0-next.3(@nomicfoundation/hardhat-utils@3.0.0-next.30)(hardhat@3.0.0-next.30)
+        specifier: 1.0.0-next.4
+        version: 1.0.0-next.4(@nomicfoundation/hardhat-utils@3.0.0-next.30)(hardhat@3.0.0-next.30)
       axios:
         specifier: ^1.11.0
         version: 1.11.0
@@ -455,8 +455,8 @@ packages:
     resolution: {integrity: sha512-ixvtKmPF42Y6ckGUbFlB54OWI75H2gO5UYHojO6eXFpS7xO3ZGgV/QH6wb40mWK+0w5XZ0233FuU9VpsuE6mKA==}
     engines: {node: '>=18'}
 
-  '@solidstate/hardhat-solidstate-utils@1.0.0-next.3':
-    resolution: {integrity: sha512-2YE6xzMiHq3ExLC9hQSDyOWmR2pS5g+jOGdMVZHZ7RrQgl3ZIzTIcD/yw9rjPORCM8k3GvPDhKcOB9TO5ype9A==}
+  '@solidstate/hardhat-solidstate-utils@1.0.0-next.4':
+    resolution: {integrity: sha512-lz3kL6gytA1XgFv8Urc79Id3nGL7HtvHFSsqV71raOehMz6RhnKZGvoHx6ioVAn2xmqpK3/3hoRiWuLhwxpv/w==}
     peerDependencies:
       '@nomicfoundation/hardhat-utils': ^3.0.0-next.11
       hardhat: ^3.0.0-next.6
@@ -550,6 +550,10 @@ packages:
 
   chalk@5.4.1:
     resolution: {integrity: sha512-zgVZuo2WcZgfUEmsn6eO3kINexW8RAE4maiQ8QNs8CtpPCSyMiYsULR3HQYkm3w8FIA3SberyMJMSldGsW+U3w==}
+    engines: {node: ^12.17.0 || ^14.13 || >=16.0.0}
+
+  chalk@5.5.0:
+    resolution: {integrity: sha512-1tm8DTaJhPBG3bIkVeZt1iZM9GfSX2lzOeDVZH9R9ffRHpmHvxZ/QhgQH/aDTkswQVt+YHdXAdS/In/30OjCbg==}
     engines: {node: ^12.17.0 || ^14.13 || >=16.0.0}
 
   cli-cursor@5.0.0:
@@ -1418,11 +1422,11 @@ snapshots:
 
   '@sentry/core@9.22.0': {}
 
-  '@solidstate/hardhat-solidstate-utils@1.0.0-next.3(@nomicfoundation/hardhat-utils@3.0.0-next.30)(hardhat@3.0.0-next.30)':
+  '@solidstate/hardhat-solidstate-utils@1.0.0-next.4(@nomicfoundation/hardhat-utils@3.0.0-next.30)(hardhat@3.0.0-next.30)':
     dependencies:
       '@nomicfoundation/hardhat-utils': 3.0.0-next.30
       axios: 1.11.0
-      chalk: 5.4.1
+      chalk: 5.5.0
       cli-table3: 0.6.5
       env-paths: 3.0.0
       hardhat: 3.0.0-next.30
@@ -1534,6 +1538,8 @@ snapshots:
       function-bind: 1.1.2
 
   chalk@5.4.1: {}
+
+  chalk@5.5.0: {}
 
   cli-cursor@5.0.0:
     dependencies:

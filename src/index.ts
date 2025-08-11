@@ -8,13 +8,11 @@ import type { HardhatPlugin } from 'hardhat/types/plugins';
 const plugin: HardhatPlugin = {
   id: pkg.name!,
   npmPackage: pkg.name!,
-  dependencies: [
-    async () => (await import('@solidstate/hardhat-solidstate-utils')).default,
-  ],
+  dependencies: () => [import('@solidstate/hardhat-solidstate-utils')],
   tasks: [taskUploadSelectors],
   hookHandlers: {
-    config: import.meta.resolve('./hook_handlers/config.js'),
-    solidity: import.meta.resolve('./hook_handlers/solidity.js'),
+    config: () => import('./hook_handlers/config.js'),
+    solidity: () => import('./hook_handlers/solidity.js'),
   },
   globalOptions: [
     globalOption({

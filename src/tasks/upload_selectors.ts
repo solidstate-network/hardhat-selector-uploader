@@ -9,5 +9,5 @@ export default task(TASK_UPLOAD_SELECTORS)
     name: 'noCompile',
     description: "Don't compile before running this task",
   })
-  .setAction(import.meta.resolve('../actions/upload_selectors.js'))
+  .setAction(() => import('../actions/upload_selectors.js'))
   .build();
