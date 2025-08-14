@@ -17,11 +17,11 @@ pnpm add -D @solidstate/hardhat-selector-uploader
 Load plugin in Hardhat config:
 
 ```javascript
-import HardhatSelectorUploader from '@solidstate/hardhat-selector-uploader';
+import hardhatSelectorUploader from '@solidstate/hardhat-selector-uploader';
 
 const config: HardhatUserConfig = {
   plugins: [
-    HardhatSelectorUploader,
+    hardhatSelectorUploader,
   ],
   selectorUploader: {
     ... // see table for configuration options
