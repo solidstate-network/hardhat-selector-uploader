@@ -1,7 +1,6 @@
 {
-  "name": "@solidstate/hardhat-4byte-uploader",
-  "version": "1.2.3",
-  "license": "MIT",
+  "name": "@solidstate/hardhat-selector-uploader",
+  "version": "2.0.0-next.0",
   "description": "Upload local function selectors to the Ethereum Selector Database",
   "keywords": [
     "hardhat",
@@ -16,34 +15,46 @@
     "blockchain",
     "wow"
   ],
-  "repository": "github:solidstate-network/hardhat-4byte-uploader",
+  "repository": "github:solidstate-network/hardhat-selector-uploader",
+  "license": "MIT",
   "author": "Nick Barry",
-  "main": "dist/src/index.js",
-  "types": "dist/src/index.d.ts",
-  "scripts": {
-    "build": "tsc --build",
-    "prepare": "husky",
-    "prettier": "prettier --write ."
+  "type": "module",
+  "exports": {
+    ".": "./dist/index.js",
+    "./types": "./dist/types.js"
   },
+  "types": "./dist/index.d.ts",
   "files": [
     "dist/",
     "src/"
   ],
-  "peerDependencies": {
-    "hardhat": "^2.0.0"
+  "scripts": {
+    "build": "pnpm clean && tsc --build",
+    "clean": "rm -rf dist/",
+    "prepare": "husky",
+    "prepublishOnly": "pnpm build",
+    "prettier": "prettier --write ."
   },
   "dependencies": {
-    "axios": "^1.7.2"
+    "@solidstate/hardhat-solidstate-utils": "^1.0.0",
+    "axios": "^1.11.0"
   },
   "devDependencies": {
-    "@trivago/prettier-plugin-sort-imports": "^4.3.0",
-    "@types/mocha": "^10.0.6",
-    "hardhat": "^2.22.5",
-    "husky": "^9.0.11",
-    "lint-staged": "^15.2.7",
-    "prettier": "^3.3.2",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.5.2"
+    "@nomicfoundation/hardhat-utils": "^3.0.0",
+    "@trivago/prettier-plugin-sort-imports": "^5.2.2",
+    "@tsconfig/node22": "^22.0.2",
+    "@types/node": "^24.2.1",
+    "hardhat": "^3.0.0",
+    "husky": "^9.1.7",
+    "knip": "^5.62.0",
+    "lint-staged": "github:ItsNickBarry/lint-staged#knip",
+    "prettier": "^3.6.2",
+    "prettier-plugin-packagejson": "^2.5.19",
+    "typescript": "^5.9.2"
+  },
+  "peerDependencies": {
+    "@nomicfoundation/hardhat-utils": "^3.0.0",
+    "hardhat": "^3.0.0"
   },
   "publishConfig": {
     "access": "public"

@@ -1,20 +1,27 @@
-import './tasks/compile';
-import './tasks/upload_selectors';
-import { extendConfig } from 'hardhat/config';
+import pkg from '../package.json' with { type: 'json' };
+import taskUploadSelectors from './tasks/upload_selectors.js';
+import './type_extensions.js';
+import { globalOption } from 'hardhat/config';
+import { ArgumentType } from 'hardhat/types/arguments';
+import type { HardhatPlugin } from 'hardhat/types/plugins';
 
-declare module 'hardhat/types/config' {
-  export interface HardhatUserConfig {
-    fourByteUploader?: { runOnCompile?: boolean };
-  }
+const plugin: HardhatPlugin = {
+  id: pkg.name!,
+  npmPackage: pkg.name!,
+  dependencies: () => [import('@solidstate/hardhat-solidstate-utils')],
+  tasks: [taskUploadSelectors],
+  hookHandlers: {
+    config: () => import('./hook_handlers/config.js'),
+    solidity: () => import('./hook_handlers/solidity.js'),
+  },
+  globalOptions: [
+    globalOption({
+      name: 'noUploadSelectors',
+      description: 'Disables selector uploading',
+      defaultValue: false,
+      type: ArgumentType.BOOLEAN,
+    }),
+  ],
+};
 
-  export interface HardhatConfig {
-    fourByteUploader: { runOnCompile: boolean };
-  }
-}
-
-extendConfig((config, userConfig) => {
-  config.fourByteUploader = Object.assign(
-    { runOnCompile: false },
-    userConfig.fourByteUploader,
-  );
-});
+export default plugin;

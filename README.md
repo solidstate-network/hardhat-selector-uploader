@@ -1,13 +1,15 @@
-# Hardhat 4byte Uploader
+# Hardhat Selector Uploader
 
 Calculate the function selectors found in all local contracts and upload them to the [4byte Directory](https://www.4byte.directory/) Ethereum Signature Database.
+
+> Versions of this plugin prior to `2.0.0` were released as `@solidstate/hardhat-4byte-uploader`.
 
 ## Installation
 
 ```bash
-npm install --save-dev @solidstate/hardhat-4byte-uploader
+npm install --save-dev @solidstate/hardhat-selector-uploader
 # or
-yarn add --dev @solidstate/hardhat-4byte-uploader
+pnpm add -D @solidstate/hardhat-selector-uploader
 ```
 
 ## Usage
@@ -15,17 +17,26 @@ yarn add --dev @solidstate/hardhat-4byte-uploader
 Load plugin in Hardhat config:
 
 ```javascript
-require('@solidstate/hardhat-4byte-uploader');
+import HardhatSelectorUploader from '@solidstate/hardhat-selector-uploader';
+
+const config: HardhatUserConfig = {
+  plugins: [
+    HardhatSelectorUploader,
+  ],
+  selectorUploader: {
+    ... // see table for configuration options
+  },
+};
 ```
 
-Add configuration under the `fourByteUploader` key:
+Add configuration under the `selectorUploader` key:
 
 | option         | description                                                                                                       | default |
 | -------------- | ----------------------------------------------------------------------------------------------------------------- | ------- |
 | `runOnCompile` | whether to automatically upload selectors during compilation (ignored if Hardhat detects a CI server environment) | `false` |
 
 ```javascript
-fourByteUploader: {
+selectorUploader: {
   runOnCompile: true,
 }
 ```
@@ -35,19 +46,19 @@ Run the included Hardhat task manually:
 ```bash
 npx hardhat upload-selectors
 # or
-yarn run hardhat upload-selectors
+pnpm hardhat upload-selectors
 ```
 
 ## Development
 
-Install dependencies via Yarn:
+Install dependencies via pnpm:
 
 ```bash
-yarn install
+pnpm install
 ```
 
 Setup Husky to format code on commit:
 
 ```bash
-yarn prepare
+pnpm prepare
 ```
