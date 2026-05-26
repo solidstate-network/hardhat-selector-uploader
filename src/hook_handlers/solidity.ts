@@ -3,7 +3,12 @@ import { isCi } from '@nomicfoundation/hardhat-utils/ci';
 import type { SolidityHooks } from 'hardhat/types/hooks';
 
 export default async (): Promise<Partial<SolidityHooks>> => ({
-  onCleanUpArtifacts: async (context, artifactPaths, next) => {
+  processArtifactsAfterSuccessfulBuild: async (
+    context,
+    artifactPaths,
+    buildRootFilePaths,
+    buildOptions,
+  ) => {
     if (
       context.config.selectorUploader.runOnCompile &&
       !context.globalOptions.noUploadSelectors &&
@@ -11,7 +16,5 @@ export default async (): Promise<Partial<SolidityHooks>> => ({
     ) {
       await uploadSelectors(context);
     }
-
-    return next(context, artifactPaths);
   },
 });
