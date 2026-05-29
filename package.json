@@ -1,6 +1,6 @@
 {
   "name": "@solidstate/hardhat-selector-uploader",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Upload local function selectors to the Ethereum Selector Database",
   "keywords": [
     "hardhat",
@@ -50,8 +50,8 @@
     "knip-exec-staged": "^5.63.1",
     "prettier": "^3.8.3",
     "prettier-plugin-packagejson": "^3.0.2",
-    "typescript": "^6.0.3",
-    "release-it": "^20.0.0"
+    "release-it": "^20.0.0",
+    "typescript": "^6.0.3"
   },
   "peerDependencies": {
     "@nomicfoundation/hardhat-utils": "^4.0.0",
